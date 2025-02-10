@@ -12,6 +12,7 @@ sed -i '/	refresh_config();/d' scripts/feeds
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a -p kiddin9 -f
+./scripts/feeds install -a -p wangcd -f
 ./scripts/feeds install -a
 
 sed -i "/DISTRIB_DESCRIPTION/c\DISTRIB_DESCRIPTION=\"%D %C by Kiddin'\"" package/base-files/files/etc/openwrt_release
