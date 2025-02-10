@@ -3,6 +3,7 @@
 shopt -s extglob
 
 sed -i '$a src-git kiddin9 https://github.com/kiddin9/kwrt-packages.git;main' feeds.conf.default
+sed -i '$a src-git wangcd https://github.com/ethan522/kmod-mlnx-ofed.git;main' feeds.conf.default
 sed -i "/telephony/d" feeds.conf.default
 
 sed -i "s?targets/%S/packages?targets/%S/\$(LINUX_VERSION)?" include/feeds.mk
@@ -77,4 +78,4 @@ sed -i \
 	-e 's?../../lang?$(TOPDIR)/feeds/packages/lang?' \
 	package/feeds/kiddin9/*/Makefile
 
-sed -i "s/OpenWrt/Kwrt/g" package/base-files/files/bin/config_generate package/base-files/image-config.in package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc config/Config-images.in Config.in include/u-boot.mk include/version.mk || true
+# sed -i "s/OpenWrt/Kwrt/g" package/base-files/files/bin/config_generate package/base-files/image-config.in package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc config/Config-images.in Config.in include/u-boot.mk include/version.mk || true
